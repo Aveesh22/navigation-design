@@ -3,7 +3,8 @@ package com.order.navigationdesign;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class StoreOrderController {
+public class StoreOrderController
+{
     @FXML
     private Label welcomeText;
 
