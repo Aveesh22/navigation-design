@@ -7,8 +7,16 @@ public class BuildYourOwnController {
     @FXML
     private Label welcomeText;
 
+    private MainMenuController mainMenuController;
+
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
+    }
+
+
+    //Get the reference to the MainController object
+    public void setMainController (MainMenuController controller){
+        mainMenuController = controller;
     }
 }

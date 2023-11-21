@@ -14,7 +14,7 @@ public class MainMenuApplication extends Application
     {
         FXMLLoader fxmlLoader = new FXMLLoader(MainMenuApplication.class.getResource("MainMenuView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 480);
-        stage.setTitle("Project 4 - Main Menu");
+        stage.setTitle("Pizza Maker - Main Menu");
         stage.setScene(scene);
         stage.show();
     }
