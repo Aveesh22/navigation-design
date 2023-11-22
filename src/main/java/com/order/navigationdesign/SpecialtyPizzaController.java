@@ -4,11 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.event.Event;
 
 public class SpecialtyPizzaController
 {
     @FXML
-    private ChoiceBox pizzaTypeChoiceBox;
+    private ComboBox pizzaTypeComboBox;
 
     @FXML
     private RadioButton smallPizza;
@@ -31,6 +33,12 @@ public class SpecialtyPizzaController
     @FXML
     private TextField sauceTextField;
 
+    @FXML
+    private ImageView pizzaImage;
+
+    @FXML
+    private ListView toppingsList;
+
     private MainMenuController mainMenuController;
     private ObservableList<String> pizzaTypeList;
 
@@ -38,8 +46,8 @@ public class SpecialtyPizzaController
     private void initialize()
     {
         pizzaTypeList = FXCollections.observableArrayList("Deluxe", "Supreme", "Meatzza", "Pepperoni", "Seafood");
-        pizzaTypeChoiceBox.setValue("Deluxe");
-        pizzaTypeChoiceBox.setItems(pizzaTypeList);
+        pizzaTypeComboBox.setValue("Deluxe");
+        pizzaTypeComboBox.setItems(pizzaTypeList);
     }
 
     //Get the reference to the MainController object
@@ -47,6 +55,20 @@ public class SpecialtyPizzaController
         mainMenuController = controller;
     }
 
+    @FXML
+    protected void onAddToOrderButtonClick(Event event)
+    {
+        Pizza pizza = PizzaMaker.createPizza(pizzaTypeComboBox.getValue().toString());
+        //pizza.toppings = toppingsList.getItems();
+        ObservableList list = toppingsList.getItems();
+
+        //stopped coding here...
+    }
+
+    private void fillToppingListView()
+    {
+
+    }
 
 
 }
