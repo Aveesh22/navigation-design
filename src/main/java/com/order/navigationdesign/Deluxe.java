@@ -10,6 +10,7 @@ public class Deluxe extends Pizza
 {
     public Deluxe()
     {
+        sauce = Sauce.TOMATO;
         toppings = new ArrayList<>(Arrays.asList(Topping.SAUSAGE, Topping.PEPPERONI,
                 Topping.GREEN_PEPPER, Topping.ONION, Topping.MUSHROOM));
     }

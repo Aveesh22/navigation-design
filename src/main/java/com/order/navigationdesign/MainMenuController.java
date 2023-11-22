@@ -44,7 +44,7 @@ public class MainMenuController {
         AnchorPane root;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SpecialtyPizzaView.fxml"));
-            root = (AnchorPane) loader.load();
+            root = (AnchorPane) loader.load(); //create a scene graph, return reference to root
             Scene scene = new Scene(root, 366, 496);
             view.setTitle("Pizza Maker - Specialty Pizza");
             view.setScene(scene);

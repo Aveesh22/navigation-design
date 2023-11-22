@@ -10,6 +10,7 @@ public class Seafood extends Pizza
 {
     public Seafood()
     {
+        sauce = Sauce.ALFREDO;
         toppings = new ArrayList<>(Arrays.asList(Topping.SHRIMP, Topping.SQUID, Topping.CRAB_MEATS));
     }
 

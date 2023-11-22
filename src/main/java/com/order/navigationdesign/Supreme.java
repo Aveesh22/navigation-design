@@ -10,6 +10,7 @@ public class Supreme extends Pizza
 {
     public Supreme()
     {
+        sauce = Sauce.TOMATO;
         toppings = new ArrayList<>(Arrays.asList(Topping.SAUSAGE, Topping.PEPPERONI, Topping.HAM,
                 Topping.GREEN_PEPPER, Topping.ONION, Topping.BLACK_OLIVE, Topping.MUSHROOM));
     }

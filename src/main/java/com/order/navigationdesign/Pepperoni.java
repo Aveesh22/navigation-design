@@ -10,6 +10,7 @@ public class Pepperoni extends Pizza
 {
     public Pepperoni()
     {
+        sauce = Sauce.TOMATO;
         toppings = new ArrayList<>(Arrays.asList(Topping.PEPPERONI));
     }
 

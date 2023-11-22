@@ -3,20 +3,40 @@ package com.order.navigationdesign;
 public enum Topping
 {
     //Requirements from Project Specs
-    SAUSAGE,
-    PEPPERONI,
-    HAM,
-    BEEF,
-    SHRIMP,
-    SQUID,
-    CRAB_MEATS,
-    GREEN_PEPPER,
-    ONION,
-    MUSHROOM,
-    BLACK_OLIVE,
+    SAUSAGE("Sausage"),
+    PEPPERONI("Pepperoni"),
+    HAM("Ham"),
+    BEEF("Beef"),
+    SHRIMP("Shrimp"),
+    SQUID("Squid"),
+    CRAB_MEATS("Crab Meats"),
+    GREEN_PEPPER("Green Pepper"),
+    ONION("Onion"),
+    MUSHROOM("Mushroom"),
+    BLACK_OLIVE("Black Olive"),
 
     //Additional Toppings
-    PINEAPPLE,
-    CHICKEN,
-    BASIL
+    PINEAPPLE("Pineapple"),
+    CHICKEN("Chicken"),
+    BASIL("Basil");
+
+    private final String name;
+
+    /**
+     * Parameterized constructor for the Topping class which initializes the name
+     * @param name the name
+     */
+    Topping(String name)
+    {
+        this.name = name;
+    }
+
+    /**
+     * Returns the name of a given enum
+     * @return the name of the given enum
+     */
+    public String getName()
+    {
+        return name;
+    }
 }

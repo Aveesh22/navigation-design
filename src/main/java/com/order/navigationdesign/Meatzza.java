@@ -11,6 +11,7 @@ public class Meatzza extends Pizza
 {
     public Meatzza()
     {
+        sauce = Sauce.TOMATO;
         toppings = new ArrayList<>(Arrays.asList(Topping.SAUSAGE, Topping.PEPPERONI, Topping.BEEF, Topping.HAM));
     }
 

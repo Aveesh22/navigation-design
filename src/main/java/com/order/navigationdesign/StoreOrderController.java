@@ -5,19 +5,20 @@ import javafx.scene.control.Label;
 
 public class StoreOrderController
 {
-    @FXML
-    private Label welcomeText;
+
 
     private MainMenuController mainMenuController;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
 
     //Get the reference to the MainController object
-    public void setMainController (MainMenuController controller){
+    public void setMainController(MainMenuController controller){
         mainMenuController = controller;
+    }
+
+    private void populateListView(Order order) {
+
+        for (Pizza pizza : order.getPizzas()) {
+            //add to listview the pizza.toString()
+        }
     }
 }
