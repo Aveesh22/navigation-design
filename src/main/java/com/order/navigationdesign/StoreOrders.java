@@ -5,7 +5,7 @@ public class StoreOrders
 {
     private ArrayList<StoreOrders> ordersList;
 
-    private static int orderNumber;
+    private static int nextOrderNumber;
 
     public void export()
     {

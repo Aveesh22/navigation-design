@@ -2,13 +2,14 @@ package com.order.navigationdesign;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class SpecialtyPizzaController
 {
     @FXML
-    private ChoiceBox pizzaTypeChoiceBox;
+    private ComboBox pizzaTypeComboBox;
 
     @FXML
     private RadioButton smallPizza;
@@ -26,6 +27,9 @@ public class SpecialtyPizzaController
     private CheckBox extraCheese;
 
     @FXML
+    private ListView toppingsList;
+
+    @FXML
     private TextField priceTextField;
 
     @FXML
@@ -38,8 +42,8 @@ public class SpecialtyPizzaController
     private void initialize()
     {
         pizzaTypeList = FXCollections.observableArrayList("Deluxe", "Supreme", "Meatzza", "Pepperoni", "Seafood");
-        pizzaTypeChoiceBox.setValue("Deluxe");
-        pizzaTypeChoiceBox.setItems(pizzaTypeList);
+        pizzaTypeComboBox.setValue("Deluxe");
+        pizzaTypeComboBox.setItems(pizzaTypeList);
     }
 
     //Get the reference to the MainController object
@@ -47,6 +51,14 @@ public class SpecialtyPizzaController
         mainMenuController = controller;
     }
 
+    @FXML
+    protected void onAddToOrderButtonClick(Event event)
+    {
+        Pizza pizza = PizzaMaker.createPizza(pizzaTypeComboBox.getValue().toString());
+        //pizza.toppings = toppingsList.getItems();
+        ObservableList list = toppingsList.getItems();
 
+        //stopped coding here...
+    }
 
 }
