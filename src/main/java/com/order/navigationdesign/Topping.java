@@ -19,5 +19,4 @@ public enum Topping
     PINEAPPLE,
     CHICKEN,
     BASIL
-
 }

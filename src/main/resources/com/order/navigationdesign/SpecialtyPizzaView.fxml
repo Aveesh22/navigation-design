@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
 <?import javafx.scene.control.ComboBox?>
 <AnchorPane prefHeight="496.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.SpecialtyPizzaController">
@@ -46,7 +35,7 @@
       <CheckBox fx:id="extraCheese" layoutX="243.0" layoutY="356.0" mnemonicParsing="false" text="extra cheese" />
       <Label layoutX="15.0" layoutY="423.0" text="Price: $" />
       <TextField fx:id="priceTextField" editable="false" layoutX="62.0" layoutY="419.0" prefHeight="26.0" prefWidth="113.0" />
-      <Button layoutX="193.0" layoutY="419.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="159.0" text="Add to order" />
+      <Button layoutX="193.0" layoutY="419.0" mnemonicParsing="false" onAction="#onAddToOrderButtonClick" prefHeight="26.0" prefWidth="159.0" text="Add to Order" />
       <ListView fx:id="toppingsList" layoutX="14.0" layoutY="248.0" prefHeight="132.0" prefWidth="178.0" />
       <Label layoutX="257.0" layoutY="254.0" text="Sauce:" />
       <TextField fx:id="sauceTextField" editable="false" layoutX="235.0" layoutY="279.0" prefHeight="26.0" prefWidth="94.0" />

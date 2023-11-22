@@ -8,7 +8,8 @@ public class BuildYourOwn extends Pizza {
         double LG = SM + 4;
         double addTop = 1.49;
 
-        double price = switch (size) {
+        double price = switch (size)
+        {
             case SMALL -> SM;
             case MEDIUM -> MD;
             case LARGE -> LG;

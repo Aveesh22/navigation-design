@@ -2,6 +2,7 @@ package com.order.navigationdesign;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -28,6 +29,9 @@ public class SpecialtyPizzaController
     private CheckBox extraCheese;
 
     @FXML
+    private ListView toppingsList;
+
+    @FXML
     private TextField priceTextField;
 
     @FXML
@@ -35,9 +39,6 @@ public class SpecialtyPizzaController
 
     @FXML
     private ImageView pizzaImage;
-
-    @FXML
-    private ListView toppingsList;
 
     private MainMenuController mainMenuController;
     private ObservableList<String> pizzaTypeList;
@@ -70,5 +71,7 @@ public class SpecialtyPizzaController
 
     }
 
+        //stopped coding here...
+    }
 
 }
