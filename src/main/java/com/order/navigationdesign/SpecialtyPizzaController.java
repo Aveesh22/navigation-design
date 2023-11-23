@@ -8,7 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.event.Event;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SpecialtyPizzaController
@@ -93,9 +95,19 @@ public class SpecialtyPizzaController
     protected void onAddToOrderButtonClick(Event event)
     {
         createPizza();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderView.fxml"));
-        CurrentOrderController viewController = loader.getController();
-        viewController.addSpecialtyPizza(this);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderView.fxml"));
+            AnchorPane root = (AnchorPane) loader.load();
+            CurrentOrderController viewController = loader.getController();
+            viewController.addSpecialtyPizza(this);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Loading CurrentOrderView.fxml.");
+            alert.setContentText("Couldn't load CurrentOrderView.fxml.");
+            alert.showAndWait();
+        }
+        //doesn't correctly pass the data, it does it without error but the controller isn't saved...
     }
 
     private void createPizza() {

@@ -27,20 +27,4 @@ public class Order
     public void addPizza(Pizza pizza) {
         pizzas.add(pizza);
     }
-
-    /*
-    public String pizzaToString(Pizza pizza)
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[").append(pizza.getClass()).append("] ");
-        for (int i = 0; i < pizza.toppings.size(); i++) {
-            sb.append(pizza.toppings.get(i).getName());
-            if (i < pizza.toppings.size() - 1) sb.append(", ");
-        }
-        if (pizza.extraSauce) sb.append(", Extra Sauce");
-        if (pizza.extraCheese) sb.append(", Extra Cheese");
-        sb.append(" $").append(String.format("%.2f", pizza.price()));
-        return sb.toString();
-    }
-     */
 }

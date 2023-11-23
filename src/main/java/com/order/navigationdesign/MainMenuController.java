@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainMenuController {
     @FXML
@@ -23,19 +24,6 @@ public class MainMenuController {
     @FXML
     private Button storeOrders;
 
-
-    public Button getSpecialtyPizzas() {
-        return specialtyPizzas;
-    }
-    public Button getBuildPizza() {
-        return buildPizza;
-    }
-    public Button getCurrentOrder() {
-        return currentOrder;
-    }
-    public Button getStoreOrders() {
-        return storeOrders;
-    }
 
     @FXML
     protected void onSpecialtyPizzasButtonClick(Event event)

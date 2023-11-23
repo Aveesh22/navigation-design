@@ -4,16 +4,36 @@ import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CurrentOrderController {
 
+    @FXML
+    private TextField orderTextField;
 
-    private final double SALES_TAX = 1.06625;
+    @FXML
+    private ListView ordersList;
+
+    @FXML
+    private TextField subtotalTextField;
+
+    @FXML
+    private TextField taxTextField;
+
+    @FXML
+    private TextField totalTextField;
+
+
+
+    private final double SALES_TAX = 0.06625;
+    private Order currOrder;
 
     private MainMenuController mainMenuController;
-    private Order currOrder;
+
 
 
     @FXML
@@ -28,7 +48,13 @@ public class CurrentOrderController {
     @FXML
     protected void onRemovePizzaClick(Event event)
     {
-        //currOrder.getPizzas().remove( the pizza from list view )
+        String selectedOrder = (String) ordersList.getSelectionModel().getSelectedItem();
+        ArrayList<Pizza> currOrderPizzas = currOrder.getPizzas();
+        for (Pizza pizza : currOrderPizzas) {
+            if (pizza.toString().equals(selectedOrder))
+                currOrderPizzas.remove(pizza);
+        }
+        setOrdersList();
     }
 
     @FXML
@@ -44,16 +70,24 @@ public class CurrentOrderController {
 
     public void addSpecialtyPizza(SpecialtyPizzaController controller) {
         currOrder.addPizza(controller.getCurrPizza());
-        //add pizza.toString() to the ListView in current orders
+        setOrdersList();
 
         double subtotal = 0.0;
         for (Pizza pizza : currOrder.getPizzas()) {
             subtotal += pizza.price();
         }
-        //then print subtotal
+        subtotalTextField.setText(String.format("%.2f", subtotal));
         double tax = subtotal * SALES_TAX;
-        //then print tax
+        taxTextField.setText(String.format("%.2f", tax));
         double total = subtotal + tax;
-        //then print total
+        totalTextField.setText(String.format("%.2f", total));
+    }
+
+    private void setOrdersList() {
+        ArrayList<String> pizzaStrings = new ArrayList<>();
+        for (Pizza pizza : currOrder.getPizzas()) {
+            pizzaStrings.add(pizza.toString());
+        }
+        ordersList.setItems(FXCollections.observableArrayList(pizzaStrings));
     }
 }
