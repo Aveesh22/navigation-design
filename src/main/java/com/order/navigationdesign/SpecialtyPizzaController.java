@@ -96,6 +96,9 @@ public class SpecialtyPizzaController
     protected void onAddToOrderButtonClick(Event event)
     {
         createPizza();
+        CurrentOrderController COController = mainMenuController.getCOController();
+        COController.addSpecialtyPizza(this);
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderView.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
@@ -113,13 +116,16 @@ public class SpecialtyPizzaController
 
     protected void changeImage(Pizza currPizza)
     {
-        /*if(currPizza.getClass() == Seafood.class)
+        /*if(currPizza instanceof Seafood)
         {
             pizzaImage.setImage(new Image("seafoodPizza.jpeg"));
         }*/
     }
 
 
+    /**
+     * Create Pizza object, store in currPizza, and update UI values
+     */
     private void createPizza() {
         currPizza = PizzaMaker.createPizza(pizzaTypeComboBox.getValue().toString());
         sauceTextField.setText(currPizza.sauce.getName());

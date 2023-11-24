@@ -55,6 +55,7 @@ public class CurrentOrderController {
                 currOrderPizzas.remove(pizza);
         }
         setOrdersList();
+        setPrices();
     }
 
     @FXML
@@ -71,7 +72,18 @@ public class CurrentOrderController {
     public void addSpecialtyPizza(SpecialtyPizzaController controller) {
         currOrder.addPizza(controller.getCurrPizza());
         setOrdersList();
+        setPrices();
+    }
 
+    private void setOrdersList() {
+        ArrayList<String> pizzaStrings = new ArrayList<>();
+        for (Pizza pizza : currOrder.getPizzas()) {
+            pizzaStrings.add(pizza.toString());
+        }
+        ordersList.setItems(FXCollections.observableArrayList(pizzaStrings));
+    }
+
+    private void setPrices() {
         double subtotal = 0.0;
         for (Pizza pizza : currOrder.getPizzas()) {
             subtotal += pizza.price();
@@ -81,13 +93,5 @@ public class CurrentOrderController {
         taxTextField.setText(String.format("%.2f", tax));
         double total = subtotal + tax;
         totalTextField.setText(String.format("%.2f", total));
-    }
-
-    private void setOrdersList() {
-        ArrayList<String> pizzaStrings = new ArrayList<>();
-        for (Pizza pizza : currOrder.getPizzas()) {
-            pizzaStrings.add(pizza.toString());
-        }
-        ordersList.setItems(FXCollections.observableArrayList(pizzaStrings));
     }
 }

@@ -1,5 +1,6 @@
 package com.order.navigationdesign;
 
+import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,25 +26,56 @@ public class MainMenuController {
     private Button storeOrders;
 
 
+    private Stage SPView;
+    private SpecialtyPizzaController SPController;
+    private Stage BYOView;
+    private BuildYourOwnController BYOController;
+    private Stage COView;
+    private CurrentOrderController COController;
+    private Stage SOView;
+    private StoreOrderController SOController;
+
+    public SpecialtyPizzaController getSPController() {
+        return SPController;
+    }
+
+    public BuildYourOwnController getBYOController() {
+        return BYOController;
+    }
+
+    public CurrentOrderController getCOController() {
+        return COController;
+    }
+
+    public StoreOrderController getSOController() {
+        return SOController;
+    }
+
     @FXML
-    protected void onSpecialtyPizzasButtonClick(Event event)
+    private void initialize()
     {
-        Stage view = new Stage();
+        createSPController();
+        createBYOController();
+        createCOController();
+        createSOController();
+    }
+
+    private void createSPController() {
+        SPView = new Stage();
         AnchorPane root;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SpecialtyPizzaView.fxml"));
             root = (AnchorPane) loader.load(); //create a scene graph, return reference to root
             Scene scene = new Scene(root, 366, 496);
-            view.setTitle("Pizza Maker - Specialty Pizza");
-            view.setScene(scene);
-            view.show();
-            SpecialtyPizzaController viewController = loader.getController();
+            SPView.setTitle("Pizza Maker - Specialty Pizza");
+            SPView.setScene(scene);
+            SPController = loader.getController();
             /*
               The statement below is to pass the reference of the MainController object
               to the SpecialtyViewController object so the SpecialtyViewController can call the
               public methods in the MainController.
              */
-            viewController.setMainController(this);
+            SPController.setMainController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -53,20 +85,17 @@ public class MainMenuController {
         }
     }
 
-    @FXML
-    protected void onBuildYourOwnPizzaButtonClick(Event event)
-    {
-        Stage view = new Stage();
+    private void createBYOController() {
+        BYOView = new Stage();
         AnchorPane root;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("BuildYourOwnView.fxml"));
             root = (AnchorPane) loader.load();
             Scene scene = new Scene(root, 480, 570);
-            view.setTitle("Pizza Maker - Build Your Own");
-            view.setScene(scene);
-            view.show();
-            BuildYourOwnController viewController = loader.getController();
-            viewController.setMainController(this);
+            BYOView.setTitle("Pizza Maker - Build Your Own");
+            BYOView.setScene(scene);
+            BYOController = loader.getController();
+            BYOController.setMainController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -76,20 +105,17 @@ public class MainMenuController {
         }
     }
 
-    @FXML
-    protected void onCurrentOrderButtonClick(Event event)
-    {
-        Stage view = new Stage();
+    private void createCOController() {
+        COView = new Stage();
         AnchorPane root;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderView.fxml"));
             root = (AnchorPane) loader.load();
             Scene scene = new Scene(root, 600, 480);
-            view.setTitle("Pizza Maker - Current Order");
-            view.setScene(scene);
-            view.show();
-            CurrentOrderController viewController = loader.getController();
-            viewController.setMainController(this);
+            COView.setTitle("Pizza Maker - Current Order");
+            COView.setScene(scene);
+            COController = loader.getController();
+            COController.setMainController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -99,20 +125,17 @@ public class MainMenuController {
         }
     }
 
-    @FXML
-    protected void onStoreOrdersButtonClick(Event event)
-    {
-        Stage view = new Stage();
+    private void createSOController() {
+        SOView = new Stage();
         AnchorPane root;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrderView.fxml"));
             root = (AnchorPane) loader.load();
             Scene scene = new Scene(root, 600, 480);
-            view.setTitle("Pizza Maker - Store Orders");
-            view.setScene(scene);
-            view.show();
-            StoreOrderController viewController = loader.getController();
-            viewController.setMainController(this);
+            SOView.setTitle("Pizza Maker - Store Orders");
+            SOView.setScene(scene);
+            SOController = loader.getController();
+            SOController.setMainController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -120,6 +143,30 @@ public class MainMenuController {
             alert.setContentText("Couldn't load StoreOrderView.fxml.");
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    protected void onSpecialtyPizzasButtonClick(Event event)
+    {
+        SPView.show();
+    }
+
+    @FXML
+    protected void onBuildYourOwnPizzaButtonClick(Event event)
+    {
+        BYOView.show();
+    }
+
+    @FXML
+    protected void onCurrentOrderButtonClick(Event event)
+    {
+        COView.show();
+    }
+
+    @FXML
+    protected void onStoreOrdersButtonClick(Event event)
+    {
+        SOView.show();
     }
 
 

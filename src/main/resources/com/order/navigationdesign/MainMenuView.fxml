@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.MainMenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.MainMenuController">
    <center>
       <GridPane prefHeight="363.0" prefWidth="569.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -20,12 +25,17 @@
             <Button fx:id="specialtyPizzas" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onSpecialtyPizzasButtonClick" prefHeight="127.0" prefWidth="229.0" text="Specialty Pizzas" textAlignment="CENTER" GridPane.halignment="CENTER">
                <graphic>
                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                       <Image url="@rutgers.png" />
+                     <image>
+                        <Image url="@seafoodPizza.jpeg" />
+                     </image>
                    </ImageView>
                </graphic></Button>
             <Button fx:id="buildPizza" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onBuildYourOwnPizzaButtonClick" prefHeight="127.0" prefWidth="229.0" text="Build Your Own Pizza" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@buildYourOwnPizza.jpeg" />
+                     </image></ImageView>
                </graphic></Button>
             <Button fx:id="currentOrder" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onCurrentOrderButtonClick" prefHeight="127.0" prefWidth="229.0" text="Current Order" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
