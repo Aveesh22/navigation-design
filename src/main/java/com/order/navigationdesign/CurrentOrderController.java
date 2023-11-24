@@ -14,7 +14,7 @@ public class CurrentOrderController {
     private TextField orderTextField;
 
     @FXML
-    private ListView ordersList;
+    private ListView pizzasList;
 
     @FXML
     private TextField subtotalTextField;
@@ -46,7 +46,7 @@ public class CurrentOrderController {
     @FXML
     protected void onRemovePizzaClick(Event event)
     {
-        String selectedOrder = (String) ordersList.getSelectionModel().getSelectedItem();
+        String selectedOrder = (String) pizzasList.getSelectionModel().getSelectedItem();
         ArrayList<Pizza> currOrderPizzas = currOrder.getPizzas();
         for (Pizza pizza : currOrderPizzas) {
             if (pizza.toString().equals(selectedOrder))
@@ -88,7 +88,7 @@ public class CurrentOrderController {
         for (Pizza pizza : currOrder.getPizzas()) {
             pizzaStrings.add(pizza.toString());
         }
-        ordersList.setItems(FXCollections.observableArrayList(pizzaStrings));
+        pizzasList.setItems(FXCollections.observableArrayList(pizzaStrings));
     }
 
     private void setPrices() {
