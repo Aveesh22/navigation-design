@@ -1,19 +1,15 @@
 package com.order.navigationdesign;
 
-import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class MainMenuController {
     @FXML
@@ -75,7 +71,7 @@ public class MainMenuController {
               to the SpecialtyViewController object so the SpecialtyViewController can call the
               public methods in the MainController.
              */
-            SPController.setMainController(this);
+            SPController.setMainMenuController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -95,7 +91,7 @@ public class MainMenuController {
             BYOView.setTitle("Pizza Maker - Build Your Own");
             BYOView.setScene(scene);
             BYOController = loader.getController();
-            BYOController.setMainController(this);
+            BYOController.setMainMenuController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -115,7 +111,7 @@ public class MainMenuController {
             COView.setTitle("Pizza Maker - Current Order");
             COView.setScene(scene);
             COController = loader.getController();
-            COController.setMainController(this);
+            COController.setMainMenuController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -135,7 +131,7 @@ public class MainMenuController {
             SOView.setTitle("Pizza Maker - Store Orders");
             SOView.setScene(scene);
             SOController = loader.getController();
-            SOController.setMainController(this);
+            SOController.setMainMenuController(this);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");

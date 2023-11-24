@@ -15,7 +15,7 @@ public abstract class Pizza
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("[").append(getClass()).append("] ");
+        sb.append("[").append(getClass().getSimpleName()).append("] ");
         for (int i = 0; i < toppings.size(); i++) {
             sb.append(toppings.get(i).getName());
             if (i < toppings.size() - 1) sb.append(", ");

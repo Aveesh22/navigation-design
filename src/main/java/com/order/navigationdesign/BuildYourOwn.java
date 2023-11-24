@@ -6,7 +6,8 @@ public class BuildYourOwn extends Pizza {
         double SM = 8.99;
         double MD = SM + 2;
         double LG = SM + 4;
-        double addTop = 1.49;
+        double addTopping = 1.49;
+        double minToppings = 3;
 
         double price = switch(size)
         {
@@ -15,7 +16,8 @@ public class BuildYourOwn extends Pizza {
             case LARGE -> LG;
         };
 
-        price += addTop * (toppings.size() - 3);
+        if (toppings.size() > minToppings)
+            price += addTopping * (toppings.size() - minToppings);
         return price;
     }
 }

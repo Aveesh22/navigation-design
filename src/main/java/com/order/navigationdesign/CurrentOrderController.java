@@ -3,11 +3,9 @@ package com.order.navigationdesign;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CurrentOrderController {
@@ -65,11 +63,21 @@ public class CurrentOrderController {
     }
 
     //Get the reference to the MainController object
-    public void setMainController(MainMenuController controller){
+    public void setMainMenuController(MainMenuController controller){
         mainMenuController = controller;
     }
 
-    public void addSpecialtyPizza(SpecialtyPizzaController controller) {
+    public void addPizza(SpecialtyPizzaController controller) {
+        currOrder.addPizza(controller.getCurrPizza());
+        setOrdersList();
+        setPrices();
+    }
+
+    /**
+     * Overloaded for BuildYourOwn pizzas
+     * @param controller the BuildYourOwn controller
+     */
+    public void addPizza(BuildYourOwnController controller) {
         currOrder.addPizza(controller.getCurrPizza());
         setOrdersList();
         setPrices();

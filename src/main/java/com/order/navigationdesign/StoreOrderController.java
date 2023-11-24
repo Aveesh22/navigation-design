@@ -1,11 +1,5 @@
 package com.order.navigationdesign;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-
-import java.util.List;
-
 public class StoreOrderController
 {
 
@@ -13,7 +7,7 @@ public class StoreOrderController
 
 
     //Get the reference to the MainController object
-    public void setMainController(MainMenuController controller){
+    public void setMainMenuController(MainMenuController controller){
         mainMenuController = controller;
     }
 
