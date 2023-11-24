@@ -61,7 +61,7 @@ public class MainMenuController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("BuildYourOwnView.fxml"));
             root = (AnchorPane) loader.load();
-            Scene scene = new Scene(root, 600, 480);
+            Scene scene = new Scene(root, 480, 570);
             view.setTitle("Pizza Maker - Build Your Own");
             view.setScene(scene);
             view.show();

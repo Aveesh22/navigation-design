@@ -6,6 +6,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.Event;
 import javafx.scene.layout.AnchorPane;
@@ -110,6 +111,15 @@ public class SpecialtyPizzaController
         //doesn't correctly pass the data, it does it without error but the controller isn't saved...
     }
 
+    protected void changeImage(Pizza currPizza)
+    {
+        /*if(currPizza.getClass() == Seafood.class)
+        {
+            pizzaImage.setImage(new Image("seafoodPizza.jpeg"));
+        }*/
+    }
+
+
     private void createPizza() {
         currPizza = PizzaMaker.createPizza(pizzaTypeComboBox.getValue().toString());
         sauceTextField.setText(currPizza.sauce.getName());
@@ -123,11 +133,13 @@ public class SpecialtyPizzaController
         }
         toppingsList.setItems(FXCollections.observableArrayList(toppings));
 
+        changeImage(currPizza);
+
         double price = currPizza.price();
         if (extraSauce.isSelected()) price += EXTRA_SAUCE;
         if (extraCheese.isSelected()) price += EXTRA_CHEESE;
         priceTextField.setText(String.format("%.2f", price));
     }
-    
+
 
 }

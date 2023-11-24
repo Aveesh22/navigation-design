@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.order.navigationdesign.BuildYourOwnController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="536.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.BuildYourOwnController">
+    <children>
+        <ImageView fx:id="pizzaImage" fitHeight="161.0" fitWidth="214.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../buildYourOwnPizza.jpeg" />
+         </image></ImageView>
+        <Label layoutX="320.0" layoutY="18.0" prefHeight="17.0" prefWidth="75.0" text="Pizza Size:" />
+        <ComboBox fx:id="pizzaSize" layoutX="271.0" layoutY="44.0" prefWidth="150.0" />
+        <RadioButton fx:id="tomatoSauceButton" layoutX="295.0" layoutY="81.0" mnemonicParsing="false" text="tomato sauce">
+         <toggleGroup>
+            <ToggleGroup fx:id="sauceToggleGroup" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="alfredoSauceButton" layoutX="295.0" layoutY="105.0" mnemonicParsing="false" text="alfredo sauce" toggleGroup="$sauceToggleGroup" />
+        <CheckBox fx:id="extraSauceCheckBox" layoutX="300.0" layoutY="130.0" mnemonicParsing="false" text="extra sauce" />
+        <CheckBox fx:id="extraCheeseCheckBox" layoutX="300.0" layoutY="154.0" mnemonicParsing="false" text="extra cheese" />
+        <Label layoutX="37.0" layoutY="193.0" text="Additional Toppings:" />
+        <ListView fx:id="additionalToppingsListView" layoutX="18.0" layoutY="216.0" prefHeight="200.0" prefWidth="150.0" />
+        <Button fx:id="addToSelectedToppingsButton" layoutX="194.0" layoutY="246.0" mnemonicParsing="false" text="add&gt;&gt;" />
+        <Button fx:id="removeFromSelectedToppingsButton" layoutX="184.0" layoutY="327.0" mnemonicParsing="false" text="&lt;&lt;remove" />
+        <Label layoutX="294.0" layoutY="193.0" text="Selected Toppings:" />
+        <ListView fx:id="selectedToppingsListView" layoutX="271.0" layoutY="216.0" prefHeight="200.0" prefWidth="150.0" />
+        <Label layoutX="46.0" layoutY="467.0" text="Price: $" />
+        <TextField fx:id="priceTextField" editable="false" layoutX="93.0" layoutY="463.0" prefHeight="26.0" prefWidth="129.0" />
+        <Button fx:id="addToOrderButton" layoutX="261.0" layoutY="463.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Add to order" />
+    </children>
 
 </AnchorPane>
