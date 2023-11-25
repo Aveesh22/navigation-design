@@ -52,6 +52,7 @@ public class MainMenuController {
     {
         createSPController();
         createBYOController();
+        StoreOrders.setNextOrderNumber(0);
         createCOController();
         createSOController();
     }
@@ -107,7 +108,7 @@ public class MainMenuController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderView.fxml"));
             root = (AnchorPane) loader.load();
-            Scene scene = new Scene(root, 600, 480);
+            Scene scene = new Scene(root, 600, 400);
             COView.setTitle("Pizza Maker - Current Order");
             COView.setScene(scene);
             COController = loader.getController();
@@ -127,7 +128,7 @@ public class MainMenuController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrderView.fxml"));
             root = (AnchorPane) loader.load();
-            Scene scene = new Scene(root, 600, 480);
+            Scene scene = new Scene(root, 600, 400);
             SOView.setTitle("Pizza Maker - Store Orders");
             SOView.setScene(scene);
             SOController = loader.getController();

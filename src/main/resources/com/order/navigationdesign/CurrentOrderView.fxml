@@ -39,7 +39,7 @@
          </font>
       </Text>
       <TextField fx:id="totalTextField" editable="false" layoutX="128.0" layoutY="348.0" prefHeight="25.0" prefWidth="285.0" />
-      <Button layoutX="455.0" layoutY="313.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Remove Pizza" />
-      <Button layoutX="455.0" layoutY="347.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Place Order" />
+      <Button layoutX="455.0" layoutY="313.0" mnemonicParsing="false" onAction="#onRemovePizzaClick" prefHeight="25.0" prefWidth="110.0" text="Remove Pizza" />
+      <Button layoutX="455.0" layoutY="347.0" mnemonicParsing="false" onAction="#onPlaceOrderClick" prefHeight="25.0" prefWidth="110.0" text="Place Order" />
    </children>
 </AnchorPane>

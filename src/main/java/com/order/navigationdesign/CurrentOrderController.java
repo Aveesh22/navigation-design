@@ -3,6 +3,7 @@ package com.order.navigationdesign;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -26,40 +27,45 @@ public class CurrentOrderController {
     private TextField totalTextField;
 
 
-
+    private MainMenuController mainMenuController;
     private final double SALES_TAX = 0.06625;
     private Order currOrder;
 
-    private MainMenuController mainMenuController;
-
-
 
     @FXML
-    private void initialize()
-    {
-        currOrder = new Order();
-        currOrder.setOrderNumber(0); //dependent on StoreOrders nextOrderNumber variable
-        //now increment nextOrderNumber++
-        currOrder.setPizzas(new ArrayList<>());
+    private void initialize() {
+        createNewOrder();
     }
 
     @FXML
     protected void onRemovePizzaClick(Event event)
     {
         String selectedOrder = (String) pizzasList.getSelectionModel().getSelectedItem();
-        ArrayList<Pizza> currOrderPizzas = currOrder.getPizzas();
-        for (Pizza pizza : currOrderPizzas) {
+        ArrayList<Pizza> newCurrOrderPizzas = (ArrayList<Pizza>) currOrder.getPizzas().clone();
+        for (Pizza pizza : currOrder.getPizzas()) {
             if (pizza.toString().equals(selectedOrder))
-                currOrderPizzas.remove(pizza);
+                newCurrOrderPizzas.remove(pizza);
         }
-        setOrdersList();
+        currOrder.setPizzas(newCurrOrderPizzas);
+        setPizzasList();
         setPrices();
     }
 
     @FXML
     protected void onPlaceOrderClick(Event event)
     {
-        //add to StoreOrders
+        if (pizzasList.getItems() != null) {
+            StoreOrderController SOController = mainMenuController.getSOController();
+            SOController.addOrder(currOrder);
+            createNewOrder();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Empty Order");
+            alert.setContentText("Add pizzas before selecting Place Order.");
+            alert.showAndWait();
+        }
     }
 
     //Get the reference to the MainController object
@@ -68,8 +74,9 @@ public class CurrentOrderController {
     }
 
     public void addPizza(SpecialtyPizzaController controller) {
+        if (currOrder == null) createNewOrder();
         currOrder.addPizza(controller.getCurrPizza());
-        setOrdersList();
+        setPizzasList();
         setPrices();
     }
 
@@ -78,12 +85,13 @@ public class CurrentOrderController {
      * @param controller the BuildYourOwn controller
      */
     public void addPizza(BuildYourOwnController controller) {
+        if (currOrder == null) createNewOrder();
         currOrder.addPizza(controller.getCurrPizza());
-        setOrdersList();
+        setPizzasList();
         setPrices();
     }
 
-    private void setOrdersList() {
+    private void setPizzasList() {
         ArrayList<String> pizzaStrings = new ArrayList<>();
         for (Pizza pizza : currOrder.getPizzas()) {
             pizzaStrings.add(pizza.toString());
@@ -101,5 +109,17 @@ public class CurrentOrderController {
         taxTextField.setText(String.format("%.2f", tax));
         double total = subtotal + tax;
         totalTextField.setText(String.format("%.2f", total));
+        currOrder.setOrderTotal(total);
+    }
+
+    private void createNewOrder() {
+        currOrder = new Order();
+        int nextOrderNumber = StoreOrders.getNextOrderNumber();
+        currOrder.setOrderNumber(nextOrderNumber);
+        orderTextField.setText(Integer.toString(nextOrderNumber));
+        StoreOrders.incrementNextOrderNumber();
+        currOrder.setPizzas(new ArrayList<>());
+        setPizzasList();
+        setPrices();
     }
 }

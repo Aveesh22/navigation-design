@@ -1,6 +1,7 @@
 package com.order.navigationdesign;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,6 +18,7 @@ public class MainMenuApplication extends Application
         stage.setTitle("Pizza Maker - Main Menu");
         stage.setScene(scene);
         stage.show();
+        stage.setOnCloseRequest(event -> Platform.exit());
     }
 
     public static void main(String[] args) {

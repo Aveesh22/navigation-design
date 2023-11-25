@@ -3,20 +3,32 @@ package com.order.navigationdesign;
 import java.util.ArrayList;
 public class StoreOrders
 {
-    private ArrayList<StoreOrders> ordersList;
+    private ArrayList<Order> ordersList;
 
     private static int nextOrderNumber;
 
-    public ArrayList<StoreOrders> getOrdersList() {
+    public StoreOrders() {
+        ordersList = new ArrayList<>();
+    }
+
+    public ArrayList<Order> getOrdersList() {
         return ordersList;
     }
 
-    public void setOrdersList(ArrayList<StoreOrders> ordersList) {
-        this.ordersList = ordersList;
+    public void addOrder(Order order) {
+        ordersList.add(order);
+    }
+
+    public void removeOrder(Order order) {
+        ordersList.remove(order);
     }
 
     public static int getNextOrderNumber() {
         return nextOrderNumber;
+    }
+
+    public static void setNextOrderNumber(int nextOrderNumber) {
+        StoreOrders.nextOrderNumber = nextOrderNumber;
     }
 
     public static void incrementNextOrderNumber() {
@@ -25,6 +37,6 @@ public class StoreOrders
 
     public void export()
     {
-
+        //write to text file
     }
 }
