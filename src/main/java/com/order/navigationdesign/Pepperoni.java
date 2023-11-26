@@ -28,6 +28,8 @@ public class Pepperoni extends Pizza
         double SM = 10.99;
         double MD = SM + 2;
         double LG = SM + 4;
+        double extraCheeseAmt = 1;
+        double extraSauceAmt = 1;
 
         double price = switch (size)
         {
@@ -36,8 +38,8 @@ public class Pepperoni extends Pizza
             case LARGE -> LG;
         };
 
-        if(extraCheese) price += 1;
-        if(extraSauce) price += 1;
+        if(extraCheese) price += extraCheeseAmt;
+        if(extraSauce) price += extraSauceAmt;
 
         return price;
     }

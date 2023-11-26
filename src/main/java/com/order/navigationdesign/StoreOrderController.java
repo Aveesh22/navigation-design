@@ -118,6 +118,7 @@ public class StoreOrderController
      */
     private Order getSelectedOrder() {
         String orderNumber = (String) orderNumbers.getSelectionModel().getSelectedItem();
+        if (orderNumber == null || orderNumber.isEmpty()) return null;
         ArrayList<Order> ordersList = storeOrders.getOrdersList();
         Order currOrder = null;
         for (Order order : ordersList) {

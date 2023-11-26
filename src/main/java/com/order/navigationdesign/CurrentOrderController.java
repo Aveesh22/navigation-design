@@ -72,6 +72,11 @@ public class CurrentOrderController {
             StoreOrderController SOController = mainMenuController.getSOController();
             SOController.addOrder(currOrder);
             createNewOrder();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ORDER CONFIRMATION");
+            alert.setHeaderText("Order Placed");
+            alert.setContentText("Order Placed to Store Orders!");
+            alert.showAndWait();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

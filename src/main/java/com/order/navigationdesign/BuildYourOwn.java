@@ -13,6 +13,8 @@ public class BuildYourOwn extends Pizza {
         double LG = SM + 4;
         double addTopping = 1.49;
         double minToppings = 3;
+        double extraCheeseAmt = 1;
+        double extraSauceAmt = 1;
 
         double price = switch(size)
         {
@@ -24,8 +26,8 @@ public class BuildYourOwn extends Pizza {
         if (toppings.size() > minToppings)
             price += addTopping * (toppings.size() - minToppings);
 
-        if(extraCheese) price += 1;
-        if(extraSauce) price += 1;
+        if(extraCheese) price += extraCheeseAmt;
+        if(extraSauce) price += extraSauceAmt;
 
         return price;
     }

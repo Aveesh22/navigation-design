@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
@@ -122,6 +123,11 @@ public class SpecialtyPizzaController
         createPizza();
         CurrentOrderController COController = mainMenuController.getCOController();
         COController.addPizza(this);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("ORDER CONFIRMATION");
+        alert.setHeaderText("Order Added");
+        alert.setContentText("Order Added to Current Order!");
+        alert.showAndWait();
     }
 
     /**
@@ -130,10 +136,16 @@ public class SpecialtyPizzaController
      */
     protected void changeImage()
     {
-        /*if(currPizza instanceof Seafood)
-        {
-            pizzaImage.setImage(new Image("seafoodPizza.jpeg"));
-        }*/
+        if (currPizza instanceof Deluxe)
+            pizzaImage.setImage(new Image(String.valueOf(getClass().getResource("deluxePizza.jpeg"))));
+        else if (currPizza instanceof Supreme)
+            pizzaImage.setImage(new Image(String.valueOf(getClass().getResource("supremePizza.jpeg"))));
+        else if (currPizza instanceof Meatzza)
+            pizzaImage.setImage(new Image(String.valueOf(getClass().getResource("meatzzaPizza.jpeg"))));
+        else if (currPizza instanceof Pepperoni)
+            pizzaImage.setImage(new Image(String.valueOf(getClass().getResource("pepperoniPizza.jpeg"))));
+        else if (currPizza instanceof Seafood)
+            pizzaImage.setImage(new Image(String.valueOf(getClass().getResource("seafoodPizza.jpeg"))));
     }
 
 
@@ -156,17 +168,9 @@ public class SpecialtyPizzaController
 
         changeImage();
 
+        if (extraSauce.isSelected()) currPizza.extraSauce = true;
+        if (extraCheese.isSelected()) currPizza.extraCheese = true;
         double price = currPizza.price();
-        if (extraSauce.isSelected())
-        {
-            price += EXTRA_SAUCE;
-            currPizza.extraSauce = true;
-        }
-        if (extraCheese.isSelected())
-        {
-            price += EXTRA_CHEESE;
-            currPizza.extraCheese = true;
-        }
         priceTextField.setText(String.format("%.2f", price));
     }
 }

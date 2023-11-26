@@ -175,6 +175,11 @@ public class BuildYourOwnController {
             CurrentOrderController COController = mainMenuController.getCOController();
             COController.addPizza(this);
             resetToppings();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ORDER CONFIRMATION");
+            alert.setHeaderText("Order Added");
+            alert.setContentText("Order Added to Current Order!");
+            alert.showAndWait();
         }
     }
 
@@ -203,17 +208,9 @@ public class BuildYourOwnController {
         }
         currPizza.toppings = selectedToppings;
 
+        if (extraSauceCheckBox.isSelected()) currPizza.extraSauce = true;
+        if (extraCheeseCheckBox.isSelected()) currPizza.extraCheese = true;
         double price = currPizza.price();
-        if (extraSauceCheckBox.isSelected())
-        {
-            price += EXTRA_SAUCE;
-            currPizza.extraSauce = true;
-        }
-        if (extraCheeseCheckBox.isSelected())
-        {
-            price += EXTRA_CHEESE;
-            currPizza.extraCheese = true;
-        }
         priceTextField.setText(String.format("%.2f", price));
     }
 

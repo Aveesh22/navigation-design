@@ -1,5 +1,6 @@
 package com.order.navigationdesign;
 
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -98,7 +99,11 @@ public class StoreOrders
             }
             catch(IOException e)
             {
-
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERROR");
+                alert.setHeaderText("Error When Writing");
+                alert.setContentText("An error has occurred when trying to write to the file.");
+                alert.showAndWait();
             }
         }
     }
