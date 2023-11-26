@@ -10,6 +10,11 @@ import java.io.IOException;
 
 public class MainMenuApplication extends Application
 {
+    /**
+     * Method to start the main menu
+     * @param stage the stage to set and start the main menu
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException
     {
@@ -21,6 +26,10 @@ public class MainMenuApplication extends Application
         stage.setOnCloseRequest(event -> Platform.exit());
     }
 
+    /**
+     * Main method to launch the Main Menu
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
         launch();
     }

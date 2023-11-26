@@ -13,26 +13,69 @@ class BuildYourOwnTest {
 
     //WE NEED AT LEAST 5 TEST CASES
 
-
-    /**
-     * Try to create a pizza that has the number of toppings out of bounds,
-     * namely < 3 or > 7 toppings.
-     */
     @Test
-    public void testNumToppings_OutOfBounds() {
+    public void testNumToppings_NotEnough()
+    {
+
     }
 
-    /**
-     * Try to create a pizza with all 3 sizes to ensure correct prices.
-     */
     @Test
-    public void testSizePrices() {
+    public void testNumToppings_TooMany()
+    {
+
     }
 
-    /**
-     * Try to create a pizza with additional toppings to ensure the price is incremented.
-     */
     @Test
-    public void testAdditionalToppings() {
+    public void allPizzaSizeCreationSuccess()
+    {
+
+    }
+
+    @Test
+    public void tomatoAlfredoSelectionSuccess()
+    {
+
+    }
+
+    @Test
+    public void noAdditionalCharge_ThreeToppings()
+    {
+
+    }
+
+    @Test
+    public void additionalCharge_MoreThanThreeToppings()
+    {
+
+    }
+
+    @Test
+    public void extraSauce_PriceAndSelectionSuccess()
+    {
+
+    }
+
+    @Test
+    public void extraCheese_PriceAndSelectionSuccess()
+    {
+
+    }
+
+    @Test
+    public void testAddButton()
+    {
+
+    }
+
+    @Test
+    public void testRemoveButton()
+    {
+
+    }
+
+    @Test
+    public void testAddToOrderButton()
+    {
+
     }
 }

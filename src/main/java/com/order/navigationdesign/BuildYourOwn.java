@@ -1,6 +1,11 @@
 package com.order.navigationdesign;
 
 public class BuildYourOwn extends Pizza {
+
+    /**
+     * Overridden method which calculates and returns the price of a BuildYourOwn pizza
+     * @return a double depicting the price of the pizza
+     */
     @Override
     public double price() {
         double SM = 8.99;
@@ -18,6 +23,10 @@ public class BuildYourOwn extends Pizza {
 
         if (toppings.size() > minToppings)
             price += addTopping * (toppings.size() - minToppings);
+
+        if(extraCheese) price += 1;
+        if(extraSauce) price += 1;
+
         return price;
     }
 }

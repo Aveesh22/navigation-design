@@ -16,7 +16,6 @@ public enum Topping
     BLACK_OLIVE("Black Olive"),
 
     //Additional Toppings
-    PINEAPPLE("Pineapple"),
     CHICKEN("Chicken"),
     BASIL("Basil");
 

@@ -9,31 +9,82 @@ public class Order
     private ArrayList<Pizza> pizzas;
     private double orderTotal;
 
-    public int getOrderNumber() {
+    /**
+     * Getter method which returns the order number of the particular Order
+     * @return the order number
+     */
+    public int getOrderNumber()
+    {
         return orderNumber;
     }
 
-    public void setOrderNumber(int orderNumber) {
+    /**
+     * Setter method which sets the order number of the particular Order
+     * @param orderNumber the order number to set the particular Order to
+     */
+    protected void setOrderNumber(int orderNumber)
+    {
         this.orderNumber = orderNumber;
     }
 
-    public ArrayList<Pizza> getPizzas() {
+    /**
+     * Getter method to return the ArrayList of pizzas in the Order
+     * @return the ArrayList of pizzas in the Order
+     */
+    public ArrayList<Pizza> getPizzas()
+    {
         return pizzas;
     }
 
-    public void setPizzas(ArrayList<Pizza> pizzas) {
+    /**
+     * Setter method to set the ArrayList of pizzas in the Order
+     * @param pizzas the ArrayList of pizzas to set the pizzas instance variable to
+     */
+    protected void setPizzas(ArrayList<Pizza> pizzas)
+    {
         this.pizzas = pizzas;
     }
 
-    public double getOrderTotal() {
+    /**
+     * Getter method that returns the order total
+     * @return the order total
+     */
+    public double getOrderTotal()
+    {
         return orderTotal;
     }
 
-    public void setOrderTotal(double orderTotal) {
+    /**
+     * Setter method that sets the order total for the Order
+     * @param orderTotal the order total to set to
+     */
+    protected void setOrderTotal(double orderTotal)
+    {
         this.orderTotal = orderTotal;
     }
 
-    public void addPizza(Pizza pizza) {
+    /**
+     * Adds a pizza to the ArrayList of pizzas in the Order
+     * @param pizza the pizza to be added
+     */
+    public void addPizza(Pizza pizza)
+    {
         pizzas.add(pizza);
+    }
+
+    /**
+     * Overridden method which returns the textual representation of an Order
+     * @return the textual representation of an Order
+     */
+    @Override
+    public String toString()
+    {
+        String pizzasText = "Order #" + orderNumber + ":\n\t";
+        for(Pizza pizza : pizzas)
+        {
+            pizzasText += pizza.toString() + "\n\t";
+        }
+        pizzasText += "\n";
+        return pizzasText;
     }
 }

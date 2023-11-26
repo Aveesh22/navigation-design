@@ -10,19 +10,34 @@ public abstract class Pizza
     protected boolean extraSauce;
     protected boolean extraCheese;
 
+    /**
+     * Abstract method that is required to be overridden by Pizza subclasses
+     * to define the price of a particular pizza
+     * @return
+     */
     public abstract double price(); //polymorphism
 
+    /**
+     * Overridden method which returns the textual representation of a particular Pizza
+     * @return the textual representation of a particular Pizza
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[").append(getClass().getSimpleName()).append("] ");
+
+        sb.append(size.getName() + " Pizza w/ ");
+        sb.append(sauce.getName() + " Sauce; ");
+
         for (int i = 0; i < toppings.size(); i++) {
             sb.append(toppings.get(i).getName());
             if (i < toppings.size() - 1) sb.append(", ");
         }
+
         if (extraSauce) sb.append(", Extra Sauce");
         if (extraCheese) sb.append(", Extra Cheese");
-        sb.append(" $").append(String.format("%.2f", price()));
+
+        sb.append(": $").append(String.format("%.2f", price()));
         return sb.toString();
     }
 }

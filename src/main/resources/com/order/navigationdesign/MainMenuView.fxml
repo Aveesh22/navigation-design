@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.MainMenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.MainMenuController">
    <center>
       <GridPane prefHeight="363.0" prefWidth="569.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -22,28 +22,39 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="specialtyPizzas" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onSpecialtyPizzasButtonClick" prefHeight="127.0" prefWidth="229.0" text="Specialty Pizzas" textAlignment="CENTER" GridPane.halignment="CENTER">
+            <Button fx:id="specialtyPizzas" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onSpecialtyPizzasButtonClick" prefHeight="160.0" prefWidth="229.0" text="Specialty Pizzas" textAlignment="CENTER" GridPane.halignment="CENTER">
                <graphic>
-                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                   <ImageView fitHeight="108.0" fitWidth="160.0" pickOnBounds="true">
                      <image>
-                        <Image url="@seafoodPizza.jpeg" />
+                        <Image url="@specialtyPizzas.jpeg" />
                      </image>
                    </ImageView>
-               </graphic></Button>
-            <Button fx:id="buildPizza" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onBuildYourOwnPizzaButtonClick" prefHeight="127.0" prefWidth="229.0" text="Build Your Own Pizza" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               </graphic>
+            </Button>
+            <Button fx:id="buildPizza" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onBuildYourOwnPizzaButtonClick" prefHeight="160.0" prefWidth="229.0" text="Build Your Own Pizza" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="122.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@buildYourOwnPizza.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="currentOrder" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onCurrentOrderButtonClick" prefHeight="160.0" prefWidth="229.0" text="Current Order" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="104.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@currentOrder.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="storeOrders" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onStoreOrdersButtonClick" prefHeight="160.0" prefWidth="229.0" text="Store Orders" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="107.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@storeOrders.jpeg" />
                      </image></ImageView>
-               </graphic></Button>
-            <Button fx:id="currentOrder" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onCurrentOrderButtonClick" prefHeight="127.0" prefWidth="229.0" text="Current Order" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic></Button>
-            <Button fx:id="storeOrders" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onStoreOrdersButtonClick" prefHeight="127.0" prefWidth="229.0" text="Store Orders" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
          </children>
       </GridPane>
@@ -51,7 +62,7 @@
    <top>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RU Pizza" textAlignment="CENTER" wrappingWidth="350.21630859375" BorderPane.alignment="CENTER">
          <font>
-            <Font size="39.0" />
+            <Font name="Annai MN Regular" size="39.0" />
          </font>
       </Text>
    </top>

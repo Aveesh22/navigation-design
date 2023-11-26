@@ -4,7 +4,7 @@ package com.order.navigationdesign;
 public class PizzaMaker
 {
     /**
-     * Create a new Pizza with the input and return the created Pizza.
+     * Creates a new Pizza with the provided user input and returns the created Pizza.
      * @param pizzaType The type of pizza
      * @return The created Pizza object.
      */

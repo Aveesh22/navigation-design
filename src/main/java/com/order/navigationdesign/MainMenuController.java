@@ -31,22 +31,42 @@ public class MainMenuController {
     private Stage SOView;
     private StoreOrderController SOController;
 
+    /**
+     * Getter method to return the SpecialtyPizzaController instance
+     * @return the SpecialtyPizza Controller
+     */
     public SpecialtyPizzaController getSPController() {
         return SPController;
     }
 
+    /**
+     * Getter method to return the BuildYourOwnController instance
+     * @return the BuildYourOwn Controller
+     */
     public BuildYourOwnController getBYOController() {
         return BYOController;
     }
 
+    /**
+     * Getter method to return the CurrentOrderController instance
+     * @return the CurrentOrder Controller
+     */
     public CurrentOrderController getCOController() {
         return COController;
     }
 
+    /**
+     * Getter method to return the StoreOrderController instance
+     * @return the StoreOrder Controller
+     */
     public StoreOrderController getSOController() {
         return SOController;
     }
 
+    /**
+     * Initializes the UI with the necessary components to create a functional GUI
+     * for the main menu
+     */
     @FXML
     private void initialize()
     {
@@ -57,6 +77,10 @@ public class MainMenuController {
         createSOController();
     }
 
+    /**
+     * Creates the SpecialtyPizzaController by linking the controller and associated .fxml file
+     * and handles any potential exceptions with linking the two
+     */
     private void createSPController() {
         SPView = new Stage();
         AnchorPane root;
@@ -82,6 +106,10 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Creates the BuildYourOwn Controller by linking the controller and associated .fxml
+     * file and handles any potential exceptions with linking the two
+     */
     private void createBYOController() {
         BYOView = new Stage();
         AnchorPane root;
@@ -102,6 +130,10 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Creates the CurrentOrder Controller by linking the controller and associated .fxml
+     * file and handles any potential exceptions with linking the two
+     */
     private void createCOController() {
         COView = new Stage();
         AnchorPane root;
@@ -122,6 +154,10 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Creates the StoreOrders Controller by linking the controller and associated .fxml
+     * file and handles any potential exceptions with linking the two
+     */
     private void createSOController() {
         SOView = new Stage();
         AnchorPane root;
@@ -142,30 +178,43 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Opens the SpecialtyPizzas GUI when its associated button is clicked
+     * @param event the click of the Specialty Pizzas button
+     */
     @FXML
     protected void onSpecialtyPizzasButtonClick(Event event)
     {
         SPView.show();
     }
 
+    /**
+     * Opens the Build Your Own Pizzas GUI when its associated button is clicked
+     * @param event the click of the Build Your Own Pizza button
+     */
     @FXML
     protected void onBuildYourOwnPizzaButtonClick(Event event)
     {
         BYOView.show();
     }
 
+    /**
+     * Opens the CurrentOrder GUI when its associated button is clicked
+     * @param event the click of the Current Order button
+     */
     @FXML
     protected void onCurrentOrderButtonClick(Event event)
     {
         COView.show();
     }
 
+    /**
+     * Opens the Store Orders GUI when its associated button is clicked
+     * @param event the click of the Store Orders button
+     */
     @FXML
     protected void onStoreOrdersButtonClick(Event event)
     {
         SOView.show();
     }
-
-
-
 }

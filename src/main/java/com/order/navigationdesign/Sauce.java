@@ -8,8 +8,8 @@ public enum Sauce
     private final String name;
 
     /**
-     * Parameterized constructor for the Sauce class which initializes the name
-     * @param name the name
+     * Parameterized constructor for the Sauce enum which initializes the name of the Sauce
+     * @param name the name of the Sauce
      */
     Sauce(String name)
     {
@@ -17,8 +17,8 @@ public enum Sauce
     }
 
     /**
-     * Returns the name of a given enum
-     * @return the name of the given enum
+     * Returns the name of a given Sauce enum
+     * @return the name of the given Sauce enum
      */
     public String getName()
     {

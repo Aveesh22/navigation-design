@@ -12,9 +12,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="536.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.BuildYourOwnController">
+<AnchorPane prefHeight="536.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.order.navigationdesign.BuildYourOwnController">
     <children>
-        <ImageView fx:id="pizzaImage" fitHeight="161.0" fitWidth="214.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="pizzaImage" fitHeight="136.0" fitWidth="199.0" layoutX="23.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@buildYourOwnPizza.jpeg" />
          </image></ImageView>
@@ -27,15 +27,15 @@
         <RadioButton fx:id="alfredoSauceButton" layoutX="295.0" layoutY="105.0" mnemonicParsing="false" onAction="#onPizzaChange" text="alfredo sauce" toggleGroup="$sauceToggleGroup" />
         <CheckBox fx:id="extraSauceCheckBox" layoutX="300.0" layoutY="130.0" mnemonicParsing="false" onAction="#onExtraSauceChange" text="extra sauce" />
         <CheckBox fx:id="extraCheeseCheckBox" layoutX="300.0" layoutY="154.0" mnemonicParsing="false" onAction="#onExtraCheeseChange" text="extra cheese" />
-        <Label layoutX="37.0" layoutY="193.0" text="Additional Toppings:" />
-        <ListView fx:id="additionalToppingsList" layoutX="18.0" layoutY="216.0" prefHeight="200.0" prefWidth="150.0" />
-        <Button fx:id="addToppingButton" layoutX="194.0" layoutY="246.0" mnemonicParsing="false" onAction="#onAddToppingButtonClick" text="add&gt;&gt;" />
-        <Button fx:id="removeToppingButton" layoutX="184.0" layoutY="327.0" mnemonicParsing="false" onAction="#onRemoveToppingButtonClick" text="&lt;&lt;remove" />
-        <Label layoutX="294.0" layoutY="193.0" text="Selected Toppings:" />
-        <ListView fx:id="selectedToppingsList" layoutX="271.0" layoutY="216.0" prefHeight="200.0" prefWidth="150.0" />
-        <Label layoutX="46.0" layoutY="467.0" text="Price: $" />
-        <TextField fx:id="priceTextField" editable="false" layoutX="93.0" layoutY="463.0" prefHeight="26.0" prefWidth="129.0" />
-        <Button fx:id="addToOrderButton" layoutX="261.0" layoutY="463.0" mnemonicParsing="false" onAction="#onAddToOrderButtonClick" prefHeight="26.0" prefWidth="150.0" text="Add to Order" />
+        <Label layoutX="40.0" layoutY="197.0" text="Additional Toppings:" />
+        <ListView fx:id="additionalToppingsList" layoutX="21.0" layoutY="220.0" prefHeight="200.0" prefWidth="150.0" />
+        <Button fx:id="addToppingButton" layoutX="197.0" layoutY="250.0" mnemonicParsing="false" onAction="#onAddToppingButtonClick" text="add&gt;&gt;" />
+        <Button fx:id="removeToppingButton" layoutX="187.0" layoutY="331.0" mnemonicParsing="false" onAction="#onRemoveToppingButtonClick" text="&lt;&lt;remove" />
+        <Label layoutX="297.0" layoutY="197.0" text="Selected Toppings:" />
+        <ListView fx:id="selectedToppingsList" layoutX="274.0" layoutY="220.0" prefHeight="200.0" prefWidth="150.0" />
+        <Label layoutX="43.0" layoutY="471.0" text="Price: $" />
+        <TextField fx:id="priceTextField" editable="false" layoutX="90.0" layoutY="467.0" prefHeight="26.0" prefWidth="129.0" />
+        <Button fx:id="addToOrderButton" layoutX="258.0" layoutY="467.0" mnemonicParsing="false" onAction="#onAddToOrderButtonClick" prefHeight="26.0" prefWidth="150.0" text="Add to Order" />
     </children>
 
 </AnchorPane>

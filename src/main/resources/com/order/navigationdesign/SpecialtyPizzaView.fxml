@@ -33,12 +33,12 @@
           <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <RadioButton fx:id="smallPizza" mnemonicParsing="false" onAction="#onPizzaChange" selected="true" text="small">
+            <RadioButton fx:id="smallPizza" mnemonicParsing="false" onAction="#onPizzaChange" selected="true" text="Small">
                <toggleGroup>
                   <ToggleGroup fx:id="pizzaSize" />
                </toggleGroup></RadioButton>
-            <RadioButton fx:id="mediumPizza" mnemonicParsing="false" onAction="#onPizzaChange" text="medium" toggleGroup="$pizzaSize" GridPane.rowIndex="1" />
-            <RadioButton fx:id="largePizza" mnemonicParsing="false" onAction="#onPizzaChange" text="large" toggleGroup="$pizzaSize" GridPane.rowIndex="2" />
+            <RadioButton fx:id="mediumPizza" mnemonicParsing="false" onAction="#onPizzaChange" text="Medium" toggleGroup="$pizzaSize" GridPane.rowIndex="1" />
+            <RadioButton fx:id="largePizza" mnemonicParsing="false" onAction="#onPizzaChange" text="Large" toggleGroup="$pizzaSize" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <CheckBox fx:id="extraSauce" layoutX="243.0" layoutY="325.0" mnemonicParsing="false" onAction="#onExtraSauceChange" prefHeight="18.0" prefWidth="94.0" text="extra sauce" />

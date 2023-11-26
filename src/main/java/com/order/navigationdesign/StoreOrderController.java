@@ -25,11 +25,19 @@ public class StoreOrderController
     private MainMenuController mainMenuController;
     private StoreOrders storeOrders;
 
+    /**
+     * Adds an order to Store Orders
+     * @param order the order to be added
+     */
     public void addOrder(Order order) {
         storeOrders.addOrder(order);
         populateOrderNumbers();
     }
 
+    /**
+     * Initializes the UI with the necessary components to create a fully
+     * functional Store Orders GUI
+     */
     @FXML
     private void initialize()
     {
@@ -37,11 +45,20 @@ public class StoreOrderController
         populateOrderNumbers();
     }
 
+    /**
+     * Correctly changes the list of store orders and associated properties when a change is detected
+     * @param event the event of changing the store orders
+     */
     @FXML
-    protected void onOrderChange(Event event) {
+    protected void onOrderChange(Event event)
+    {
         updateView();
     }
 
+    /**
+     * Cancels a particular order on the click of the cancel order button
+     * @param event the click of the cancel order button
+     */
     @FXML
     protected void onCancelOrderClick(Event event) {
         Order currOrder = getSelectedOrder();
@@ -50,18 +67,31 @@ public class StoreOrderController
         updateView();
     }
 
+    /**
+     * Exports the entire list of orders into a .txt file on the click of the export store orders button
+     * @param event the click of the export store orders button
+     */
     @FXML
-    protected void onExportStoreOrdersClick(Event event) {
+    protected void onExportStoreOrdersClick(Event event)
+    {
         storeOrders.export();
     }
 
 
-    //Get the reference to the MainController object
-    public void setMainMenuController(MainMenuController controller){
+    /**
+     * Gets the reference to the MainMenuController object instance
+     * @param controller the MainMenuController
+     */
+    public void setMainMenuController(MainMenuController controller)
+    {
         mainMenuController = controller;
     }
 
-    private void populateOrderNumbers() {
+    /**
+     * Populates the order numbers
+     */
+    private void populateOrderNumbers()
+    {
         ArrayList<String> numbers = new ArrayList<>();
         for (Order order : storeOrders.getOrdersList()) {
             numbers.add(String.valueOf(order.getOrderNumber()));
@@ -69,6 +99,10 @@ public class StoreOrderController
         orderNumbers.setItems(FXCollections.observableArrayList(numbers));
     }
 
+    /**
+     * Populates the pizza list for a particular order
+     * @param order the order to be populated
+     */
     private void populatePizzasList(Order order)
     {
         ArrayList<String> pizzaStrings = new ArrayList<>();
@@ -78,6 +112,10 @@ public class StoreOrderController
         pizzasList.setItems(FXCollections.observableArrayList(pizzaStrings));
     }
 
+    /**
+     * Returns order information regarding a specified order (through its respective number)
+     * @return the order
+     */
     private Order getSelectedOrder() {
         String orderNumber = (String) orderNumbers.getSelectionModel().getSelectedItem();
         ArrayList<Order> ordersList = storeOrders.getOrdersList();
@@ -91,6 +129,9 @@ public class StoreOrderController
         return currOrder;
     }
 
+    /**
+     * Updates the view of store orders when a critical action occurs to a particular order
+     */
     private void updateView() {
         Order currOrder = getSelectedOrder();
         if (currOrder != null) {

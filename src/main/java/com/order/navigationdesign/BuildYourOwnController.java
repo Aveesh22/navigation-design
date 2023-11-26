@@ -57,16 +57,28 @@ public class BuildYourOwnController {
     private ObservableList<String> pizzaSizeList;
     private Pizza currPizza;
 
-    public Pizza getCurrPizza() {
+    /**
+     * Gets the current BuildYourOwn pizza instance
+     * @return the BuildYourOwn pizza instance
+     */
+    public Pizza getCurrPizza()
+    {
         return currPizza;
     }
 
-    //Get the reference to the MainMenuController object
+    /**
+     * Gets the reference to the MainMenuController object instance from this (BuildYourOwnController) controller
+     * @param controller the reference to the MainMenuController object instance
+     */
     public void setMainMenuController(MainMenuController controller)
     {
         mainMenuController = controller;
     }
 
+    /**
+     * Initializes the UI with the necessary components to create a functional GUI
+     * that can effectively build a BuildYourOwn pizza through user specs
+     */
     @FXML
     private void initialize()
     {
@@ -76,12 +88,21 @@ public class BuildYourOwnController {
         resetToppings();
     }
 
+    /**
+     * Creates a new pizza instance (when necessary) when a property of the pizza is changed
+     * @param event the event for when a pizza is changed
+     */
     @FXML
     protected void onPizzaChange(Event event)
     {
         createPizza();
     }
 
+    /**
+     * Creates a new pizza instance with the modification of with or without extra sauce
+     * and respectively changes the property of the currPizza to reflect it
+     * @param event the enabling or disabling of the extraSauce checkbox
+     */
     @FXML
     protected void onExtraSauceChange(Event event)
     {
@@ -89,6 +110,11 @@ public class BuildYourOwnController {
         currPizza.extraSauce = extraSauceCheckBox.isSelected();
     }
 
+    /**
+     * Creates a new pizza instance with the modification of with or without extra sauce
+     * and respectively changes the property of the currPizza to reflect it
+     * @param event the enabling or disabling of the extraSauce checkbox
+     */
     @FXML
     protected void onExtraCheeseChange(Event event)
     {
@@ -97,8 +123,9 @@ public class BuildYourOwnController {
     }
 
     /**
-     * Additional -> Selected
-     * @param event
+     * On the click of the add button, a specific topping goes from the additional
+     * toppings to the selected toppings
+     * @param event the click of the add button
      */
     @FXML
     protected void onAddToppingButtonClick(Event event)
@@ -116,8 +143,9 @@ public class BuildYourOwnController {
     }
 
     /**
-     * Selected -> Additional
-     * @param event
+     * On the click of the remove button, a specific topping goes from the selected
+     * toppings to the additional toppings
+     * @param event the click of the remove button
      */
     @FXML
     protected void onRemoveToppingButtonClick(Event event)
@@ -130,6 +158,11 @@ public class BuildYourOwnController {
         }
     }
 
+    /**
+     * On the click of the add to order button create the pizza and pass the information
+     * of the pizza to the CurrentOrderController to eventually place the order
+     * @param event the click of the add to order button
+     */
     @FXML
     protected void onAddToOrderButtonClick(Event event)
     {
@@ -145,6 +178,10 @@ public class BuildYourOwnController {
         }
     }
 
+    /**
+     * Uses the PizzaMaker to create a new BuildYourOwn pizza with the specifications
+     * specified by the user
+     */
     private void createPizza()
     {
         currPizza = PizzaMaker.createPizza("BuildYourOwn");
@@ -168,12 +205,22 @@ public class BuildYourOwnController {
 
         double price = currPizza.price();
         if (extraSauceCheckBox.isSelected())
+        {
             price += EXTRA_SAUCE;
+            currPizza.extraSauce = true;
+        }
         if (extraCheeseCheckBox.isSelected())
+        {
             price += EXTRA_CHEESE;
+            currPizza.extraCheese = true;
+        }
         priceTextField.setText(String.format("%.2f", price));
     }
 
+    /**
+     * Takes all the selected toppings from the associated list and puts them
+     * into the additional toppings list to "reset" building the pizza
+     */
     private void resetToppings() {
         ArrayList<String> allToppings = new ArrayList<>();
         for (Topping topping : Topping.values())
@@ -182,6 +229,9 @@ public class BuildYourOwnController {
         selectedToppingsList.setItems(FXCollections.observableArrayList(new ArrayList<String>()));
     }
 
+    /**
+     * Sends an alert to the user in the UI telling them that they have not selected enough toppings
+     */
     private void notEnoughToppings() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("ERROR");
@@ -190,6 +240,9 @@ public class BuildYourOwnController {
         alert.showAndWait();
     }
 
+    /**
+     * Sends an alert to the user in the UI telling them that they have selected too many toppings
+     */
     private void tooManyToppings() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("ERROR");

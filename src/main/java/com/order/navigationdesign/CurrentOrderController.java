@@ -31,12 +31,21 @@ public class CurrentOrderController {
     private final double SALES_TAX = 0.06625;
     private Order currOrder;
 
-
+    /**
+     * Initializes the UI with the necessary components to create a functional GUI, namely,
+     * by creating a new order
+     */
     @FXML
-    private void initialize() {
+    private void initialize()
+    {
         createNewOrder();
     }
 
+    /**
+     * On the click of the remove pizza button, the selected pizza is removed and
+     * the list of selected pizzas and their respective prices are updated
+     * @param event the event of clicking the remove button
+     */
     @FXML
     protected void onRemovePizzaClick(Event event)
     {
@@ -51,6 +60,11 @@ public class CurrentOrderController {
         setPrices();
     }
 
+    /**
+     * On the click of the place order button, the selected pizzas in the order
+     * are sent to a created and instantiated StoreOrderController instance
+     * @param event the event of clicking the place order button
+     */
     @FXML
     protected void onPlaceOrderClick(Event event)
     {
@@ -68,11 +82,20 @@ public class CurrentOrderController {
         }
     }
 
-    //Get the reference to the MainController object
+    /**
+     * Gets the reference of the MainMenuController object
+     * @param controller the MainMenuController
+     */
     public void setMainMenuController(MainMenuController controller){
         mainMenuController = controller;
     }
 
+    /**
+     * An overloaded method to add a pizza to the current order given that it
+     * is a Specialty Pizza
+     * @param controller the SpecialtyPizzaController that sends data about the specialty
+     *                   pizza to be added
+     */
     public void addPizza(SpecialtyPizzaController controller) {
         if (currOrder == null) createNewOrder();
         currOrder.addPizza(controller.getCurrPizza());
@@ -81,8 +104,10 @@ public class CurrentOrderController {
     }
 
     /**
-     * Overloaded for BuildYourOwn pizzas
-     * @param controller the BuildYourOwn controller
+     * An overloaded method to add a pizza to the current order given that it
+     * is a BuildYourOwn Pizza
+     * @param controller the SpecialtyPizzaController that sends data about the specialty
+     *                   pizza to be added
      */
     public void addPizza(BuildYourOwnController controller) {
         if (currOrder == null) createNewOrder();
@@ -91,6 +116,9 @@ public class CurrentOrderController {
         setPrices();
     }
 
+    /**
+     * Sets the pizzasList ListView to the pizzas that are in the current order
+     */
     private void setPizzasList() {
         ArrayList<String> pizzaStrings = new ArrayList<>();
         for (Pizza pizza : currOrder.getPizzas()) {
@@ -99,6 +127,9 @@ public class CurrentOrderController {
         pizzasList.setItems(FXCollections.observableArrayList(pizzaStrings));
     }
 
+    /**
+     * Sets the three price fields (subtotal, tax, and total prices) for the order
+     */
     private void setPrices() {
         double subtotal = 0.0;
         for (Pizza pizza : currOrder.getPizzas()) {
@@ -112,6 +143,9 @@ public class CurrentOrderController {
         currOrder.setOrderTotal(total);
     }
 
+    /**
+     * Creates a new order
+     */
     private void createNewOrder() {
         currOrder = new Order();
         int nextOrderNumber = StoreOrders.getNextOrderNumber();
