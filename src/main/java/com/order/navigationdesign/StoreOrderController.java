@@ -9,6 +9,10 @@ import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 
+/**
+ * This class defines the Controller for the StoreOrderView.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class StoreOrderController
 {
 

@@ -1,11 +1,12 @@
 package com.order.navigationdesign;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * This class defines a Supreme Pizza.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class Supreme extends Pizza
 {
     /**

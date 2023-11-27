@@ -11,17 +11,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This class defines the Controller for the MainMenuView.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class MainMenuController {
-    @FXML
-    private Button specialtyPizzas;
-    @FXML
-    private Button buildPizza;
-    @FXML
-    private Button currentOrder;
-    @FXML
-    private Button storeOrders;
-
-
     private Stage SPView;
     private SpecialtyPizzaController SPController;
     private Stage BYOView;

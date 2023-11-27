@@ -1,5 +1,9 @@
 package com.order.navigationdesign;
 
+/**
+ * This enum class describes the types of pizza toppings.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public enum Topping
 {
     //Requirements from Project Specs

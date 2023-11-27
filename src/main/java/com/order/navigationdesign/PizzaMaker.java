@@ -1,6 +1,9 @@
 package com.order.navigationdesign;
 
-//create an instance of subclasses based on the chosen pizza type
+/**
+ * This class creates an instance of a subclass of Pizza based on the chosen type.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class PizzaMaker
 {
     /**

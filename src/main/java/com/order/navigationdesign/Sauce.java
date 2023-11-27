@@ -1,5 +1,9 @@
 package com.order.navigationdesign;
 
+/**
+ * This enum class describes the types of pizza sauces.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public enum Sauce
 {
     TOMATO("Tomato"),

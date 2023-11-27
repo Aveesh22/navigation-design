@@ -2,6 +2,10 @@ package com.order.navigationdesign;
 
 import java.util.ArrayList;
 
+/**
+ * This abstract class defines a Pizza.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public abstract class Pizza
 {
     protected ArrayList<Topping> toppings; //Topping is an enum class
@@ -13,7 +17,7 @@ public abstract class Pizza
     /**
      * Abstract method that is required to be overridden by Pizza subclasses
      * to define the price of a particular pizza
-     * @return
+     * @return the price of the pizza
      */
     public abstract double price(); //polymorphism
 

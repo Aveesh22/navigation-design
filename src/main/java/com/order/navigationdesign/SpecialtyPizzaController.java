@@ -10,6 +10,10 @@ import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
+/**
+ * This class defines the Controller for the SpecialtyPizzaView.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class SpecialtyPizzaController
 {
     @FXML
@@ -43,8 +47,6 @@ public class SpecialtyPizzaController
     private ImageView pizzaImage;
 
 
-    private final double EXTRA_SAUCE = 1.00;
-    private final double EXTRA_CHEESE = 1.00;
     private MainMenuController mainMenuController;
     private ObservableList<String> pizzaTypeList;
     private Pizza currPizza;

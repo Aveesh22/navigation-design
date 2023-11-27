@@ -3,6 +3,10 @@ package com.order.navigationdesign;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * This class defines a pizza Order.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class Order
 {
     private int orderNumber;

@@ -1,6 +1,21 @@
 package com.order.navigationdesign;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/**
+ * This class defines a BuildYourOwn Pizza.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class BuildYourOwn extends Pizza {
+
+    /**
+     * No parameter constructor which creates a new ArrayList for toppings
+     */
+    public BuildYourOwn()
+    {
+        toppings = new ArrayList<>();
+    }
 
     /**
      * Overridden method which calculates and returns the price of a BuildYourOwn pizza
@@ -13,8 +28,11 @@ public class BuildYourOwn extends Pizza {
         double LG = SM + 4;
         double addTopping = 1.49;
         double minToppings = 3;
+        double maxToppings = 7;
         double extraCheeseAmt = 1;
         double extraSauceAmt = 1;
+
+        if (toppings.size() < minToppings || toppings.size() > maxToppings) return 0;
 
         double price = switch(size)
         {

@@ -8,12 +8,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This class is the main driver that starts and initializes the application.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class MainMenuApplication extends Application
 {
     /**
      * Method to start the main menu
      * @param stage the stage to set and start the main menu
-     * @throws IOException
+     * @throws IOException exception regarding input/output
      */
     @Override
     public void start(Stage stage) throws IOException

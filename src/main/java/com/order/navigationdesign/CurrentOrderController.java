@@ -9,6 +9,10 @@ import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 
+/**
+ * This class defines the Controller for the CurrentOrderView.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class CurrentOrderController {
 
     @FXML
@@ -27,8 +31,8 @@ public class CurrentOrderController {
     private TextField totalTextField;
 
 
-    private MainMenuController mainMenuController;
     private final double SALES_TAX = 0.06625;
+    private MainMenuController mainMenuController;
     private Order currOrder;
 
     /**

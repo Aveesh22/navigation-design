@@ -11,6 +11,10 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * This class defines the Controller for the BuildYourOwnView.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class BuildYourOwnController {
 
     @FXML
@@ -35,22 +39,11 @@ public class BuildYourOwnController {
     private ListView additionalToppingsList;
 
     @FXML
-    private Button addToppingButton;
-
-    @FXML
-    private Button removeToppingButton;
-
-    @FXML
     private ListView selectedToppingsList;
 
     @FXML
     private TextField priceTextField;
 
-    @FXML
-    private Button addToOrderButton;
-
-    private final double EXTRA_SAUCE = 1.00;
-    private final double EXTRA_CHEESE = 1.00;
     private final int MIN_TOPPINGS = 3;
     private final int MAX_TOPPINGS = 7;
     private MainMenuController mainMenuController;

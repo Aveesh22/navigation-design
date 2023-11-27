@@ -9,10 +9,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
+/**
+ * This class defines a StoreOrders object to contain all the store's orders.
+ * @author Patryk Dziedzic, Aveesh Patel
+ */
 public class StoreOrders
 {
     private ArrayList<Order> ordersList;
-
     private static int nextOrderNumber;
 
     /**
