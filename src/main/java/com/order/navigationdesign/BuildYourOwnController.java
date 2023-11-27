@@ -79,6 +79,7 @@ public class BuildYourOwnController {
         pizzaSize.setItems(pizzaSizeList);
         pizzaSize.setValue(Size.SMALL.getName());
         resetToppings();
+        resetSizeSauceCheese();
     }
 
     /**
@@ -168,6 +169,7 @@ public class BuildYourOwnController {
             CurrentOrderController COController = mainMenuController.getCOController();
             COController.addPizza(this);
             resetToppings();
+            resetSizeSauceCheese();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ORDER CONFIRMATION");
             alert.setHeaderText("Order Added");
@@ -217,6 +219,19 @@ public class BuildYourOwnController {
             allToppings.add(topping.getName());
         additionalToppingsList.setItems(FXCollections.observableArrayList(allToppings));
         selectedToppingsList.setItems(FXCollections.observableArrayList(new ArrayList<String>()));
+    }
+
+    /**
+     * Resets the pizza size to small, selects the tomato sauce button, deselects the extra sauce
+     * and extra cheese button if selected, and resets the priceTextField
+     */
+    private void resetSizeSauceCheese()
+    {
+        pizzaSize.setValue(Size.SMALL.getName());
+        tomatoSauceButton.setSelected(true);
+        extraSauceCheckBox.setSelected(false);
+        extraCheeseCheckBox.setSelected(false);
+        priceTextField.setText("");
     }
 
     /**

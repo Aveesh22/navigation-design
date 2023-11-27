@@ -130,6 +130,7 @@ public class SpecialtyPizzaController
         alert.setHeaderText("Order Added");
         alert.setContentText("Order Added to Current Order!");
         alert.showAndWait();
+        reset();
     }
 
     /**
@@ -149,7 +150,6 @@ public class SpecialtyPizzaController
         else if (currPizza instanceof Seafood)
             pizzaImage.setImage(new Image(String.valueOf(getClass().getResource("seafoodPizza.jpeg"))));
     }
-
 
     /**
      * Creates a Pizza object, stores it in currPizza, and updates UI values
@@ -174,5 +174,18 @@ public class SpecialtyPizzaController
         if (extraCheese.isSelected()) currPizza.extraCheese = true;
         double price = currPizza.price();
         priceTextField.setText(String.format("%.2f", price));
+    }
+
+    /**
+     * Resets the pizza type, size of pizza, and deselects the extra cheese and extra
+     * sauce checkboxes, if selected
+     */
+    private void reset()
+    {
+        pizzaTypeComboBox.setValue("Deluxe");
+        smallPizza.setSelected(true);
+        extraCheese.setSelected(false);
+        extraSauce.setSelected(false);
+        createPizza();
     }
 }
