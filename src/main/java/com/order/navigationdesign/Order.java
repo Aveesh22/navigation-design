@@ -88,7 +88,8 @@ public class Order
         {
             pizzasText += pizza.toString() + "\n\t";
         }
-        pizzasText += "\n";
+        pizzasText += "----------";
+        pizzasText += "\n\tOrder Total: $" + String.format("%.2f", orderTotal);
         return pizzasText;
     }
 }

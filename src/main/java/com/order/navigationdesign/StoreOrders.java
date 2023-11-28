@@ -99,6 +99,7 @@ public class StoreOrders
                 for(Order order: ordersList)
                 {
                     writer.write(order.toString());
+                    writer.write("\n\n");
                 }
             }
             catch(IOException e)
